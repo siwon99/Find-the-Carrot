@@ -20,10 +20,10 @@ body {
 }
 
 .yard {
+  position: relative;
   width: 100%;
   height: 100%;
   margin-top: 40px;
-  opacity: 0.4;
 }
 
  .header {
@@ -56,6 +56,7 @@ body {
   text-align: center;
   border: 4px solid black;
   margin-top: 10px;
+  visibility: hidden;
 }
 
 .score {
@@ -68,6 +69,7 @@ body {
   background-color: rgb(111, 190, 255);
   border: 3px solid black;
   color: white;
+  visibility: hidden;
 }
 
 .pop-up {
