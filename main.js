@@ -1,9 +1,9 @@
 'use strict';
 
 const CARROT_SIZE = 150;
-const CARROT_COUNT = 10;
-const BUG_COUNT = 10;
-const GAME_DURATION_SEC = 10;
+const CARROT_COUNT = 15;
+const BUG_COUNT = 15;
+const GAME_DURATION_SEC = 15;
 
 const yard = document.querySelector('.yard');
 const yardRect = yard.getBoundingClientRect();
@@ -15,6 +15,12 @@ const gameScore = document.querySelector('.score');
 const popUp = document.querySelector('.pop-up');
 const popUpText = document.querySelector('.message');
 const popUpRefresh = document.querySelector('.refresh');
+
+const carrotSound = new Audio("./sound/carrot_pull.mp3");
+const bugSound = new Audio("./sound/bug_pull.mp3");
+const alertSound = new Audio("./sound/alert.wav");
+const bgSound = new Audio("./sound/bg.mp3");
+const winSound = new Audio("./sound/game_win.mp3");
 
 let started = false;
 let score = 0;
@@ -64,6 +70,7 @@ function startGame() {
   showStopBtn();
   showTimerAndScore();
   startGameTimer();
+  playSound(bgSound);
 }
 
 //게임 멈추는 함수
@@ -72,11 +79,19 @@ function stopGame() {
   stopGameTimer();
   hideGameBtn();
   showPopUpText('REPLAY? 😮');
+  playSound(alertSound);
+  stopSound(bgSound);
 }
 
 //게임 끝나는 함수
 function finishGame(win) {
   started = false;
+  if(win) {
+    playSound(winSound);
+  } else {
+    playSound(bugSound);
+  }
+  stopSound(bgSound);
   hideGameBtn();
   stopGameTimer();
   showPopUpText(win ? 'YOU WON😍' : 'YOU LOST😭');
@@ -161,6 +176,7 @@ function onYardClick(event) {
   if (target.matches('.carrot')) {
     target.remove();
     score++;
+    playSound(carrotSound);
     UpdategameCounter();
     if (score === CARROT_COUNT) {
       finishGame(true);
@@ -168,6 +184,15 @@ function onYardClick(event) {
   } else if (target.matches('.bug')) {
     finishGame(false);
   }
+}
+
+function playSound(sound) {
+  sound.currentTime = 0;
+  sound.play(); 
+}
+
+function stopSound(sound) {
+  sound.pause();
 }
 
 //점수 업데이트하기
