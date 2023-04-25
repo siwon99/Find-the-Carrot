@@ -112,11 +112,17 @@ body {
   font-size: 38px;
 }
 
-.carrot, .bug {
+.carrot, .bug, .bomb {
   transition: transform 100mx ease-in;
 }
 
+.bomb {
+  width: 70px;
+  height: 70px;
+}
+
 .carrot:hover,
-.bug:hover {
+.bug:hover,
+.bomb:hover {
   transform: scale(1.1);
 }
