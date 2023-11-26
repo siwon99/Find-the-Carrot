@@ -20,7 +20,7 @@
 ## 🪄Function
 게임 실행: http://127.0.0.1:5500/main.html
 
-- 시작 화면
+- 메인 화면
 ![image](https://github.com/siwon99/Find-the-Carrot/assets/126474541/b6095d21-1c3c-4973-8eaa-94c15e596cc3)
 
 - 게임 시작 화면
