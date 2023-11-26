@@ -18,6 +18,7 @@
 1차: 2023년 4월 25일 ~ 4월 29일
 
 ## 🪄Function
+게임 실행: http://127.0.0.1:5500/main.html
 
 - 시작 화면
 ![image](https://github.com/siwon99/Find-the-Carrot/assets/126474541/b6095d21-1c3c-4973-8eaa-94c15e596cc3)
@@ -27,7 +28,6 @@
 
 - 게임 성공 시
 ![image](https://github.com/siwon99/Find-the-Carrot/assets/126474541/3ea0c073-993d-4233-8267-fcc064169618)
-
 
 - 게임 실패 시(벌레 혹은 폭탄 클릭시)
 ![image](https://github.com/siwon99/Find-the-Carrot/assets/126474541/a6b3f78e-ea46-41f9-ba1a-cab9462695fc)
